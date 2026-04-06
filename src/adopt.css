@@ -1,1 +1,103 @@
-/* hadar */ 
+/* adopt.css */
+
+/* Main container for the form page */
+main {
+    max-width: 550px; /* Narrower container for a centered form look */
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Page heading */
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+/* Dog summary box (Image + Name) above the form */
+#dog-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #c8f6ef; /* Matches index and dog detail pages */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#dog-summary-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover; /* Required to prevent distortion */
+    border-radius: 50%; /* Circular image for the summary */
+    border: 3px solid white;
+}
+
+#dog-summary-name {
+    color: #5c9d96;
+    margin: 0;
+}
+
+/* Form styling */
+#adopt-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: left; /* Labels should be left-aligned */
+}
+
+/* Spacing for each input field section */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Input field styling (Email, Name, Phone) */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit; /* Ensures Calibri is used */
+    transition: border-color 0.3s;
+}
+
+/* Highlight input on focus */
+input:focus {
+    outline: none;
+    border-color: #5c9d96;
+    box-shadow: 0 0 5px rgba(92, 157, 150, 0.3);
+}
+
+/* Submit button within the form */
+#adopt-form .btn {
+    width: 100%; /* Full width button for the form */
+    margin-top: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Navigation link back to list */
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #5c9d96;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

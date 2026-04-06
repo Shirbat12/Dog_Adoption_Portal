@@ -8,6 +8,7 @@ main {
     /* Ensures content isn't flush against the screen edges on mobile */
     padding: 0 20px;
     text-align: center;
+    font-family: inherit;
 }
 
 h1 {

@@ -1,22 +1,5 @@
-/* Wait for DOM to load */
-/* - Use DOMContentLoaded event */
+/* thankyou.js */
 
-/* Retrieve dog data */
-/* - From localStorage: JSON.parse(localStorage.getItem('selectedDog')) */
-/* - OR from URL parameters */
-/* - OR from sessionStorage */
-
-/* Check if dog data exists */
-/* - Handle case where no data is found */
-
-/* Display dog information */
-/* - Set dog name in #dog-name */
-/* - Set dog image in #dog-image */
-/* - Show image (remove display: none) */
-
-/* Optional: Add event listeners */
-/* - Back button functionality */
-/* - Other interactions */
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve dog data from localStorage
     const dogData = JSON.parse(localStorage.getItem('selectedDog'));
