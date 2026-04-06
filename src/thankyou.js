@@ -21,6 +21,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Retrieve dog data from localStorage
     const dogData = JSON.parse(localStorage.getItem('selectedDog'));
     
+    // --- START: Added Fireworks Effect ---
+    // This calls the confetti function from the library we added
+    confetti({
+        particleCount: 150, // Number of confetti pieces
+        spread: 100,       // How wide they spread
+        origin: { y: 0.6 } // Where they start on the screen (0.6 is slightly below top)
+    });
+    // --- END: Added Fireworks Effect ---
+
+    // The rest of your existing code...
+    const urlParams = new URLSearchParams(window.location.search);
+    const dogId = urlParams.get('id');
+
     // Check if dog data exists
     if (dogData) {
         // Display dog name

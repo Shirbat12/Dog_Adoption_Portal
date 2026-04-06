@@ -1,40 +1,69 @@
-/* Body styling */
-/* - Set font-family (e.g., Arial, sans-serif) */
-/* - Set max-width for container */
-/* - Add margin and padding */
-/* - Set text-align (center, left, etc.) */
+/* thankyou.css */
 
-/* Headings (h1, h2) */
-/* - Set color */
-/* - Set font-size */
-/* - Add margin/padding */
+main {
+    /* Limit the overall width of the content */
+    max-width: 600px; 
+    /* Centers the container horizontally and adds top/bottom spacing */
+    margin: 50px auto; 
+    /* Ensures content isn't flush against the screen edges on mobile */
+    padding: 0 20px;
+    text-align: center;
+}
 
-/* Dog info section (#dog-info) */
-/* - Set margin */
-/* - Set background color (optional) */
-/* - Add padding (optional) */
+h1 {
+    color: #333;
+    /* Adds space below the title so it's not cramped */
+    margin-bottom: 30px; 
+    font-size: 2.5rem;
+}
 
-/* Dog image (#dog-image) */
-/* - Set border-radius */
-/* - Set margin */
-/* - Add box-shadow (optional) */
+#dog-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* This makes the teal box narrower than its parent if needed */
+    max-width: 500px;
+    /* Centers the teal box inside the <main> element */
+    margin: 0 auto 30px auto; 
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #c8f6ef;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-/* Dog name (#dog-name) */
-/* - Set color */
-/* - Set font-size */
+#dog-image {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+    object-fit: cover; /* Prevents image distortion [cite: 95] */
+    border-radius: 15px;
+}
 
-/* Paragraph (p) */
-/* - Set font-size */
-/* - Set color */
-/* - Add margin */
+#dog-name {
+    font-size: 1.8rem;
+    color: #5c9d96;
+}
 
-/* Link (a) */
-/* - Set display (inline-block, block, etc.) */
-/* - Set padding */
-/* - Set background-color */
-/* - Set color */
-/* - Remove text-decoration */
-/* - Add border-radius */
+/* Updated: Added more space between the text and the button */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 40px; /* Increased margin for better spacing */
+    color: #444;
+}
 
-/* Link hover state (a:hover) */
-/* - Change background-color on hover */
+/* Button styling using the common .btn class [cite: 93] */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #5c9d96;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45827b;
+}
