@@ -38,8 +38,9 @@ main {
 
 .dog-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover; 
+    height: 300px;
+    object-fit: contain; 
+    object-position: center;
     border-bottom: 1px solid #eee;
 }
 
