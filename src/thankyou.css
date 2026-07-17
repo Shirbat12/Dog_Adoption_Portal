@@ -48,7 +48,7 @@ header h1 {
 
 #dog-image {
     width: 200px;
-    height: auto;
+    height: 180px;
     object-fit: cover;
     border-radius: 12px;
 }
