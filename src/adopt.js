@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Prevent default form behavior (page reload) [cite: 71]
         e.preventDefault();
 
-        // Navigate to thankyou.html with the same dog ID [cite: 72]
-        window.location.href = `thankyou.html?id=${id}`;
+        const fullname = document.getElementById('fullname').value;
+
+        // Navigate to thankyou.html with the same dog ID and adopter's name [cite: 72]
+        window.location.href = `thankyou.html?id=${id}&fullname=${encodeURIComponent(fullname)}`;
     });
 });

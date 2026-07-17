@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', async () => {
-    const dogs = await getAllDogs();
+    const dogs = await fetchAllDogs();
     
     const cards = document.querySelectorAll('.dog-card');
 
@@ -12,5 +12,11 @@ window.addEventListener('DOMContentLoaded', async () => {
             const link = cards[index].querySelector('.btn');
             link.href = `dog.html?id=${index}`;
         }
+    });
+
+    const surpriseBtn = document.getElementById('surprise-btn');
+    surpriseBtn.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * dogs.length);
+        window.location.href = `dog.html?id=${randomIndex}`;
     });
 });

@@ -8,11 +8,11 @@ main {
     text-align: center;
 }
 
-/* Page heading */
-h1 {
-    color: #333;
-    margin-bottom: 30px;
-    font-size: 2.2rem;
+/* Page heading (now inside header) */
+header h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.6rem;
 }
 
 /* Dog summary box (Image + Name) above the form */
@@ -29,10 +29,10 @@ h1 {
 }
 
 #dog-summary-image {
-    width: 120px;
-    height: 120px;
-    object-fit: cover; /* Required to prevent distortion */
-    border-radius: 50%; /* Circular image for the summary */
+    width: 90px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
     border: 3px solid white;
 }
 

@@ -1,34 +1,40 @@
 /* thankyou.js */
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Retrieve dog data from localStorage
-    const dogData = JSON.parse(localStorage.getItem('selectedDog'));
-    
-    // --- START: Added Fireworks Effect ---
-    // This calls the confetti function from the library we added
-    confetti({
-        particleCount: 150, // Number of confetti pieces
-        spread: 100,       // How wide they spread
-        origin: { y: 0.6 } // Where they start on the screen (0.6 is slightly below top)
-    });
-    // --- END: Added Fireworks Effect ---
+document.addEventListener('DOMContentLoaded', async function() {
+    const id = getDogIdFromURL();
+    const dog = await fetchDogById(id);
 
-    // The rest of your existing code...
-    const urlParams = new URLSearchParams(window.location.search);
-    const dogId = urlParams.get('id');
+    spawnCelebrationConfetti();
 
-    // Check if dog data exists
-    if (dogData) {
-        // Display dog name
-        document.getElementById('dog-name').textContent = dogData.name;
-        
-        // Display dog image
-        const dogImage = document.getElementById('dog-image');
-        dogImage.src = dogData.first_image_url;
-        dogImage.style.display = 'block';
+    if (dog) {
+        document.getElementById('dog-name').textContent = dog.name;
+        document.getElementById('dog-image').src = dog.first_image_url;
+        document.getElementById('adoption-message').textContent = 'Thank you for your enquiry!';
+        document.body.style.backgroundImage = `url("${dog.first_image_url}")`;
     } else {
-        // Handle case where no dog data is found
         document.getElementById('dog-name').textContent = 'No dog selected';
-        console.log('No dog data found in localStorage');
     }
 });
+
+function spawnCelebrationConfetti() {
+    const shapes = ['🎉', '🐾', '🎊'];
+
+    for (let i = 0; i < 60; i++) {
+        const piece = document.createElement('span');
+        piece.className = 'confetti-piece';
+        piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+
+        piece.style.left = `${Math.random() * 100}vw`;
+        piece.style.top = '-40px';
+
+        const drift = (Math.random() - 0.5) * 200;
+        const rotation = 360 + Math.random() * 360;
+        piece.style.setProperty('--x-drift', `${drift}px`);
+        piece.style.setProperty('--rotation', `${rotation}deg`);
+        piece.style.animationDuration = `${2 + Math.random() * 1.5}s`;
+        piece.style.animationDelay = `${Math.random() * 0.6}s`;
+
+        document.body.appendChild(piece);
+        piece.addEventListener('animationend', () => piece.remove());
+    }
+}

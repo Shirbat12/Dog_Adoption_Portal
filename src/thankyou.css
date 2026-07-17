@@ -1,21 +1,34 @@
 /* thankyou.css */
 
-main {
-    /* Limit the overall width of the content */
-    max-width: 600px; 
-    /* Centers the container horizontally and adds top/bottom spacing */
-    margin: 50px auto; 
-    /* Ensures content isn't flush against the screen edges on mobile */
-    padding: 0 20px;
-    text-align: center;
-    font-family: inherit;
+html, body {
+    height: 100%;
 }
 
-h1 {
-    color: #333;
-    /* Adds space below the title so it's not cramped */
-    margin-bottom: 30px; 
-    font-size: 2.5rem;
+body {
+    background-size: auto;
+    background-position: top left;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+main {
+    /* Limit the overall width of the content */
+    max-width: 600px;
+    /* Centers the container horizontally and adds top/bottom spacing */
+    margin: 50px auto;
+    /* Ensures content isn't flush against the screen edges on mobile */
+    padding: 40px 20px;
+    text-align: center;
+    font-family: inherit;
+    background-color: rgba(255, 255, 255, 0.88);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+    font-size: 2.8rem;
 }
 
 #dog-info {
@@ -23,9 +36,9 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    /* This makes the teal box narrower than its parent if needed */
+    /* this makes the teal box narrower than its parent if needed */
     max-width: 500px;
-    /* Centers the teal box inside the <main> element */
+    /* centers the teal box inside the <main> element */
     margin: 0 auto 30px auto; 
     padding: 40px;
     border-radius: 10px;
@@ -34,11 +47,10 @@ h1 {
 }
 
 #dog-image {
-    width: 100%;
-    max-width: 300px;
-    height: 250px;
-    object-fit: cover; /* Prevents image distortion [cite: 95] */
-    border-radius: 15px;
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 #dog-name {
@@ -53,18 +65,25 @@ p {
     color: #444;
 }
 
-/* Button styling using the common .btn class [cite: 93] */
-.btn {
-    display: inline-block;
-    padding: 10px 25px;
-    background-color: #5c9d96;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+.confetti-piece {
+    position: fixed;
+    left: 0;
+    top: 0;
+    font-size: 1.8rem;
+    pointer-events: none;
+    z-index: 1000;
+    animation-name: confetti-page-fall;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
 }
 
-.btn:hover {
-    background-color: #45827b;
+@keyframes confetti-page-fall {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x-drift), 110vh) rotate(var(--rotation));
+        opacity: 0;
+    }
 }
