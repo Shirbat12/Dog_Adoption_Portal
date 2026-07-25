@@ -1,5 +1,5 @@
 // script.js
-const MOCK_URL = "https://fb7ed47d-0c2b-4485-bba3-f78b669b7843.mock.pstmn.io/dog";
+const MOCK_URL = "https://384d7c2c-9892-4b43-a684-ebdef8616da6.mock.pstmn.io/dogs";
 
 async function fetchAllDogs() {
     try {
